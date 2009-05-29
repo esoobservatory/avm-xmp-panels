@@ -1,0 +1,15 @@
+<xfi:fileinfo xmlns:xfi="http://ns.adobe.com/xmp/fileinfo/">
+	<xfi:panels>
+		<xfi:panel
+			name = "AstronomyVisualization"
+			label = "AstronomyVisualization"
+			type = "custom"
+			panelLibrary = "AstronomyVisualization"
+			panelClass = "avm.panels.AstronomyVisualization"
+			visible="true"
+			modifyDate = "2009-05-22Z"
+			localizationFile = "AstronomyVisualization"
+			description = "Description of the 'AstronomyVisualization' panel.">
+		</xfi:panel>
+	</xfi:panels>
+</xfi:fileinfo>

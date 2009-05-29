@@ -1,0 +1,62 @@
+<project name="AstronomyVisualization" default="buildAll" basedir="..">
+	<description>
+		Buildfile for a Custom Panel
+	</description>
+	
+	<property file="build/build.properties" />
+	<property name="FLEX_HOME" value="${flex-sdk-dir}"/>
+	<property name="target.dir" value="${basedir}/target"/>
+	<property name="intermediate.dir" value="${basedir}/target/intermediate"/>
+
+	<fail message="Please provide the 'flex-sdk-dir' variable in build.properties!">
+		<condition>
+			<contains string="${flex-sdk-dir}" substring="&lt;Location"/>
+		</condition>
+	</fail>
+			
+	<!-- default build target -->
+	<target name="buildAll" depends="clean, buildPanel"/>
+	
+	<!--publish target -->
+	<target name="publishAll" depends="buildAll, publishPanel"/>
+	
+	<!-- build the custom panel -->
+	<target name="buildPanel">
+		<echo message="--> Panel '${panel-dir}'" level="info" />
+		<compc output="${intermediate.dir}"
+			directory="true" locale="en_US" debug="false" optimize="true" strict="true"
+			show-actionscript-warnings="true" include-classes="${panel-classes}">
+			<load-config filename="${FLEX_HOME}/frameworks/flex-config.xml"/>
+			<source-path path-element="${basedir}/src"/>
+			<compiler.external-library-path dir="${FLEX_HOME}/frameworks/libs" append="true">
+				<include name="framework.swc"/>
+			</compiler.external-library-path>
+			<compiler.external-library-path dir="${basedir}/libs" append="true" >
+				<include name="FileInfoFoundation.swc"/>
+			</compiler.external-library-path>
+		</compc>
+		<copy file="${intermediate.dir}/library.swf" tofile="${target.dir}/${panel-dir}/bin/${panel-library}.swf"/>
+		<delete dir="${intermediate.dir}"/>
+	</target>
+	
+	<!-- copy Panels to user Dir i.e. User Directory i.e. C:/Document and Settings/username/Application Data/Adobe/XMP/Custom File Info Panels/2.0/panels -->
+	<target name="publishPanel">
+		<fail message="Please provide the 'publish.target' variable in build.properties!">
+			<condition>
+				<contains string="${publish.target}" substring="&lt;Location"/>
+			</condition>
+		</fail>
+		<copy todir="${publish.target}/${panel-dir}">
+			<fileset dir="${target.dir}/${panel-dir}"/>
+		</copy>
+	</target>
+	
+	<target name="clean">
+		<delete includeemptydirs="true" failonerror="false" quiet="true">
+			<fileset dir="${target.dir}/${projectName}/bin"/>
+			<fileset dir="${intermediate.dir}"/>
+		</delete>
+	</target>
+	
+	<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar"/>
+</project>
