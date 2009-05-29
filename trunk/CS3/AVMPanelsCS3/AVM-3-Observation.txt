@@ -1,0 +1,293 @@
+<?xml version="1.0">
+<!DOCTYPE panel SYSTEM "http://ns.adobe.com/custompanels/1.0">
+<panel version="1" type="custom_panel" title="$$$/FitsLiberator/Metadata/Panel/3-Observation=Astro Observation">
+group( spacing: gSpace, horizontal: align_fill, vertical: align_top ) {
+
+    group(placement: place_row, spacing: gSpace, horizontal: align_left, vertical: align_top, reverse: rtl_aware) {
+        static_text(
+            name: '$$$/FitsLiberator/Comment/howto=Use this panel to record information about all observations contributing to an astronomical image.', 
+            font: font_small, 
+            vertical: align_center, 
+            horizontal: align_left, 
+            label: false);
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Facility=Facility*'
+        );
+        cat_container_edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Facility=Facility*',
+            container_type: seq_struct,
+            preserve_commas: false,
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Facility'
+        );
+        mru_popup(
+            no_checks: false,
+            container_type: seq_struct, mru_append: true,
+            vertical: align_center,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Facility'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Instrument=Instrument*'
+        );
+        cat_container_edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Instrument=Instrument*',
+            container_type: seq_struct,
+            preserve_commas: false,
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Instrument'
+        );
+        mru_popup(
+            no_checks: false,
+            container_type: seq_struct, mru_append: true,
+            vertical: align_center,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Instrument'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Spectral.ColorAssignment=Spectral.ColorAssignment*'
+        );
+        cat_container_edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Spectral.ColorAssignment=Spectral.ColorAssignment*',
+            container_type: seq_struct,
+            preserve_commas: false,
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Spectral.ColorAssignment'
+        );
+        mru_popup(
+            no_checks: false,
+            container_type: seq_struct, mru_append: true,
+            vertical: align_center,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Spectral.ColorAssignment'
+        );
+    }
+
+    group(placement: place_row, horizontal: align_fill) {
+        static_text();
+        static_text(
+            font: font_small,
+            name: '$$$/FitsLiberator/Comment/Spectral.ColorAssignment=Valid values are: Purple, Blue, Cyan, Green, Yellow, Orange, Red, Magenta, Grayscale, Pseudocolor'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Spectral.Band=Spectral.Band*'
+        );
+        cat_container_edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Spectral.Band=Spectral.Band*',
+            container_type: seq_struct,
+            preserve_commas: false,
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Spectral.Band'
+        );
+        mru_popup(
+            no_checks: false,
+            container_type: seq_struct, mru_append: true,
+            vertical: align_center,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Spectral.Band'
+        );
+    }
+
+    group(placement: place_row, horizontal: align_fill) {
+        static_text();
+        static_text(
+            font: font_small,
+            name: '$$$/FitsLiberator/Comment/Spectral.Band=Valid values are: Radio, Millimeter, Infrared, Optical, Ultraviolet, X-ray, Gamma-ray'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Spectral.Bandpass=Spectral.Bandpass*'
+        );
+        cat_container_edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Spectral.Bandpass=Spectral.Bandpass*',
+            container_type: seq_struct,
+            preserve_commas: false,
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Spectral.Bandpass'
+        );
+        mru_popup(
+            no_checks: false,
+            container_type: seq_struct, mru_append: true,
+            vertical: align_center,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Spectral.Bandpass'
+        );
+    }
+
+    group(placement: place_row, horizontal: align_fill) {
+        static_text();
+        static_text(
+            font: font_small,
+            name: '$$$/FitsLiberator/Comment/Spectral.Bandpass=E.g.: Far-UV, B-band, V-band, K-band (named bands); H-alpha, O-III, CO(3-2), H-I(spectral lines)'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Spectral.CentralWavelength=Spectral.CentralWavelength*'
+        );
+        cat_container_edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Spectral.CentralWavelength=Spectral.CentralWavelength*',
+            container_type: seq_struct,
+            preserve_commas: false,
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Spectral.CentralWavelength'
+        );
+        mru_popup(
+            no_checks: false,
+            container_type: seq_struct, mru_append: true,
+            vertical: align_center,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Spectral.CentralWavelength'
+        );
+    }
+
+    group(placement: place_row, horizontal: align_fill) {
+        static_text();
+        static_text(
+            font: font_small,
+            name: '$$$/FitsLiberator/Comment/Subject.CentralWavelength=Valid units are in nanometers (= 1e7 x [cm]; 1e3 x [micron]; 0.1 x [angstrom]; 1.24e-3 / [eV])'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_top,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Spectral.Notes=Spectral.Notes'
+        );
+        edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Spectral.Notes=Spectral.Notes',
+            height: 70,
+            container_type: alt_struct,
+            v_scroller: true,
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Spectral.Notes'
+        );
+        mru_popup(
+            no_checks: false,
+            container_type: single_value,
+            vertical: align_top,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Spectral.Notes'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Temporal.StartTime=Temporal.StartTime*'
+        );
+        cat_container_edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Temporal.StartTime=Temporal.StartTime*',
+            container_type: seq_struct,
+            preserve_commas: false,
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Temporal.StartTime'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Temporal.IntegrationTime=Temporal.IntegrationTime*'
+        );
+        cat_container_edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Temporal.IntegrationTime=Temporal.IntegrationTime*',
+            container_type: seq_struct,horizontal: align_fill,
+            preserve_commas: false,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Temporal.IntegrationTime'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/DatasetID=DatasetID*'
+        );
+        cat_container_edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/DatasetID=DatasetID*',
+            container_type: seq_struct,
+            preserve_commas: false,
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'DatasetID'
+        );
+    }
+    
+    separator(height: 10, width: 485, horizontal: align_fill);    
+    
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text();
+        static_text(
+            font: font_small,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Comment/List=* Ordered values for each channel of a composite should be separated by a semicolon'
+        );
+    }    
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text();
+        static_text(
+            font: font_small,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Comment/List=AVM Panels version 1.1,  March 2008 | Documentation at http://www.virtualastronomy.org/'
+        );
+    }  
+
+}
+</panel>

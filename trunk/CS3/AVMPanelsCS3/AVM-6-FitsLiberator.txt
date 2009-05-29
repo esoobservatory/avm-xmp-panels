@@ -1,0 +1,165 @@
+<?xml version="1.0">
+<!DOCTYPE panel SYSTEM "http://ns.adobe.com/custompanels/1.0">
+<panel version="1" type="custom_panel" title="$$$/FitsLiberator/Metadata/Panel/6-FitsLiberator=Astro FITS Liberator">
+group( spacing: gSpace, horizontal: align_fill, vertical: align_top ) {
+
+    group(placement: place_row, spacing: gSpace, horizontal: align_left, vertical: align_top, reverse: rtl_aware) {
+        static_text(
+            name: '$$$/FitsLiberator/Comment/howto=This panel contains the astronomical image import settings from the FITS Liberator.', 
+            font: font_small, 
+            vertical: align_center, 
+            horizontal: align_left, 
+            label: false);
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_top,
+            name: '$$$/FitsLiberator/Metadata/Keyword/FL.StretchFunction=FL.StretchFunction*'
+        );
+        cat_container_edit_text(
+            preserve_commas: false,      
+            horizontal: align_fill,
+            height: 40,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'FL.StretchFunction'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_top,
+            name: '$$$/FitsLiberator/Metadata/Keyword/FL.BackgroundLevel=FL.BackgroundLevel*'
+        );
+        cat_container_edit_text(
+            preserve_commas: false,
+            horizontal: align_fill,
+            height: 40,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'FL.BackgroundLevel'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_top,
+            name: '$$$/FitsLiberator/Metadata/Keyword/FL.PeakLevel=FL.PeakLevel*'
+        );
+        cat_container_edit_text(
+            preserve_commas: false,
+            horizontal: align_fill,
+            height: 40,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'FL.PeakLevel'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_top,
+            name: '$$$/FitsLiberator/Metadata/Keyword/FL.ScaledBackgroundLevel=FL.ScaledBackgroundLevel*'
+        );
+        cat_container_edit_text(
+            preserve_commas: false,
+            horizontal: align_fill,
+            height: 40,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'FL.ScaledBackgroundLevel'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_top,
+            name: '$$$/FitsLiberator/Metadata/Keyword/FL.ScaledPeakLevel=FL.ScaledPeakLevel*'
+        );
+        cat_container_edit_text(
+            preserve_commas: false,
+            horizontal: align_fill,
+            height: 40,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'FL.ScaledPeakLevel'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_top,
+            name: '$$$/FitsLiberator/Metadata/Keyword/FL.BlackLevel=FL.BlackLevel*'
+        );
+        cat_container_edit_text(
+            preserve_commas: false,
+            horizontal: align_fill,
+            height: 40,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'FL.BlackLevel'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_top,
+            name: '$$$/FitsLiberator/Metadata/Keyword/FL.WhiteLevel=FL.WhiteLevel*'
+        );
+        cat_container_edit_text(
+            preserve_commas: false,
+            horizontal: align_fill,
+            height: 40,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'FL.WhiteLevel'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_top,
+            name: '$$$/FitsLiberator/Metadata/Keyword/FL.CreationNotes=FL.CreationNotes'
+        );
+        edit_text(
+            height: 160,
+            container_type: alt_struct,
+            v_scroller: true,
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'FL.CreationNotes'
+        );
+    }
+    
+    separator(height: 10, width: 485, horizontal: align_fill);    
+    
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text();
+        static_text(
+            font: font_small,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Comment/List=* Multiple values may be separated by a semicolon'
+        );
+    }
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text();
+        static_text(
+            font: font_small,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Comment/List=AVM Panels version 1.1,  March 2008 | Documentation at http://www.virtualastronomy.org/'
+        );
+    }  
+
+}
+
+</panel>
