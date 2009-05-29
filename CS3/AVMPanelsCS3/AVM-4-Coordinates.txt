@@ -1,0 +1,243 @@
+<?xml version="1.0">
+<!DOCTYPE panel SYSTEM "http://ns.adobe.com/custompanels/1.0">
+<panel version="1" type="custom_panel" title="$$$/FitsLiberator/Metadata/Panel/4-Observation=Astro Coordinates">
+group( spacing: gSpace, horizontal: align_fill, vertical: align_top ) {
+
+    group(placement: place_row, spacing: gSpace, horizontal: align_left, vertical: align_top, reverse: rtl_aware) {
+        static_text(
+            name: '$$$/FitsLiberator/Comment/howto=Use this panel to record WCS coordinates (e.g. RA & Dec) for astronomical observations.', 
+            font: font_small, 
+            vertical: align_center, 
+            horizontal: align_left, 
+            label: false);
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Spatial.CoordinateFrame=Spatial.CoordinateFrame'
+        );
+        popup(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Spatial.CoordinateFrame=Spatial.CoordinateFrame',
+            horizontal: align_fill,
+            items: '$$$/FitsLiberator/Completion/Spatial.CoordinateFrame=Undefined{};ICRS{ICRS};FK5{FK5};FK4{FK4};ECL{ECL};GAL{GAL};SGAL{SGAL}',
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Spatial.CoordinateFrame'
+        );
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Spatial.Equinox=Spatial.Equinox'
+        );
+        edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Spatial.Equinox=Spatial.Equinox',
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Spatial.Equinox'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Spatial.ReferenceValue=Spatial.ReferenceValue*'
+        );
+        cat_container_edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Spatial.ReferenceValue=Spatial.ReferenceValue',
+            container_type: seq_struct,
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Spatial.ReferenceValue'
+        );
+    }
+  
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Spatial.ReferenceDimension=Spatial.ReferenceDimension*'
+        );
+        cat_container_edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Spatial.ReferenceDimension=Spatial.ReferenceDimension',
+            container_type: seq_struct,
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Spatial.ReferenceDimension'
+        );
+    }
+  
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Spatial.ReferencePixel=Spatial.ReferencePixel*'
+        );
+        cat_container_edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Spatial.ReferencePixel=Spatial.ReferencePixel',
+            container_type: seq_struct,
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Spatial.ReferencePixel'
+        );
+    }
+  
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Spatial.Scale=Spatial.Scale*'
+        );
+        cat_container_edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Spatial.Scale=Spatial.Scale',
+            container_type: seq_struct,
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Spatial.Scale'
+        );
+    }
+  
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Spatial.Rotation=Spatial.Rotation'
+        );
+        edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Spatial.Rotation=Spatial.Rotation',
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Spatial.Rotation'
+        );
+    }
+  
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Spatial.CoordsystemProjection=Spatial.CoordsystemProjection'
+        );
+        popup(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Spatial.CoordsystemProjection=Spatial.CoordsystemProjection',
+            horizontal: align_fill,
+            items: '$$$/FitsLiberator/Completion/Spatial.CoordsystemProjection=Undefined{};TAN{TAN};SIN{SIN};ARC{ARC};AIT{AIT};CAR{CAR};CEA{CEA}',
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Spatial.CoordsystemProjection'
+        );
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Spatial.Quality=Spatial.Quality'
+        );
+        popup(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Spatial.Quality=Spatial.Quality',
+            horizontal: align_fill,
+            items: '$$$/FitsLiberator/Completion/Spatial.Quality=Undefined{};Full{Full};Position{Position}',
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Spatial.Quality'
+        );
+    }
+  
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_top,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Spatial.Notes=Spatial.Notes'
+        );
+        edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Spatial.Notes=Spatial.Notes',
+            height: 60,
+            container_type: alt_struct,
+            v_scroller: true,
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Spatial.Notes'
+        );        
+    }
+  
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_top,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Spatial.FITSheader=Spatial.FITSheader'
+        );
+       edit_text(
+           fbname: '$$$/FitsLiberator/Metadata/Keyword/Spatial.FITSheader=Spatial.FITSheader',
+           height: 100,
+           container_type: alt_struct,
+           v_scroller: true,
+           horizontal: align_fill,
+           xmp_ns_prefix: 'avm',
+           xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+           xmp_path: 'Spatial.FITSheader'
+       );      
+    }
+  
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_top,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Spatial.CDMatrix=Spatial.CDMatrix*'
+        );
+        cat_container_edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Spatial.CDMatrix=Spatial.CDMatrix',
+            height: 40,
+            container_type: seq_struct,
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Spatial.CDMatrix'
+        );
+    }
+  
+    group(placement: place_row, horizontal: align_fill) {
+        static_text();
+        static_text(
+            font: font_small,
+            name: '$$$/FitsLiberator/Comment/Spatial.CDMatrix=Spatial.CDMatrix has been deprecated in AVM 1.1; it is included here only for 1.0 backwards compatibility.'
+        );
+    }    
+
+    separator(height: 10, width: 485, horizontal: align_fill);    
+    
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text();
+        static_text(
+            font: font_small,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Comment/List=* Multiple values may be separated by a semicolon'
+         
+        );
+    }
+        
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text();
+        static_text(
+            font: font_small,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Comment/WCS1=Note that rotation/cropping/resizing of an image will invalidate any WCS solution.'
+        );
+    }    
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text();
+        static_text(
+            font: font_small,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Comment/List=AVM Panels version 1.1,  March 2008 | Documentation at http://www.virtualastronomy.org/'
+        );
+    }  
+
+}
+</panel>

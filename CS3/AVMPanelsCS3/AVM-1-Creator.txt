@@ -1,0 +1,236 @@
+<?xml version="1.0">
+<!DOCTYPE panel SYSTEM "http://ns.adobe.com/custompanels/1.0">
+<panel version="1" type="custom_panel" title="$$$/FitsLiberator/Metadata/Panel/1-Creator=Astro Creator">
+group( spacing: gSpace, horizontal: align_fill, vertical: align_top ) {
+
+	group(placement: place_row, spacing: gSpace, horizontal: align_left, vertical: align_top, reverse: rtl_aware) {
+		static_text(
+			name: '$$$/FitsLiberator/Comment/howto=Use this panel to record the image source and contact information.', 
+			font: font_small, 
+			vertical: align_center, 
+			horizontal: align_left, 
+			label: false);
+	}
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Creator=Creator'
+        );
+        edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Creator=Creator',
+            horizontal: align_fill,
+            xmp_ns_prefix: 'photoshop',
+            xmp_namespace: photoshop,
+            xmp_path: 'Source'
+        );
+        mru_popup(
+            no_checks: false,
+            container_type: single_value,
+            vertical: align_center,
+            xmp_ns_prefix: 'photoshop',
+            xmp_namespace: photoshop,
+            xmp_path: 'Source'
+        );
+    }
+  
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/CreatorURL=CreatorURL'
+        );
+        edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/CreatorURL=CreatorURL',
+            horizontal: align_fill,
+            xmp_ns_prefix: 'Iptc4xmpCore',
+            xmp_namespace: 'http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/',
+            xmp_path: 'CreatorContactInfo/Iptc4xmpCore:CiUrlWork'
+        );
+        mru_popup(
+            no_checks: false,
+            container_type: single_value,
+            vertical: align_center,        
+            xmp_ns_prefix: 'Iptc4xmpCore',
+            xmp_namespace: 'http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/',
+            xmp_path: 'CreatorContactInfo/Iptc4xmpCore:CiUrlWork'
+        );
+    }
+  
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Contact.Name=Contact.Name*'
+        );
+        cat_container_edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Contact.Name=Contact.Name*',
+            container_type: seq_struct,
+            preserve_commas: false,
+            horizontal: align_fill,
+            xmp_path: 'Authors'
+        );
+        mru_popup(
+            no_checks: false,
+            container_type: seq_struct,
+            no_check: true,
+            mru_append: true,
+            vertical: align_center,        
+            xmp_path: 'Authors'
+        );        
+    }
+  
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Contact.Email=Contact.Email'
+        );
+        edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Contact.Email=Contact.Email',
+            horizontal: align_fill,
+            xmp_ns_prefix: 'Iptc4xmpCore', 
+            xmp_namespace: 'http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/', 
+            xmp_path: 'CreatorContactInfo/Iptc4xmpCore:CiEmailWork'
+        );
+    }
+  
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Contact.Telephone=Contact.Telephone'
+        );
+        edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Contact.Telephone=Contact.Telephone',
+            horizontal: align_fill,
+            xmp_ns_prefix: 'Iptc4xmpCore', 
+            xmp_namespace: 'http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/', 
+            xmp_path: 'CreatorContactInfo/Iptc4xmpCore:CiTelWork'
+        );         
+    }
+  
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_top,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Contact.Address=Contact.Address'
+        );
+        edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Contact.Address=Contact.Address',
+            horizontal: align_fill,
+            height: 60,
+            xmp_ns_prefix: 'Iptc4xmpCore',
+            xmp_namespace: 'http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/',
+            xmp_path: 'CreatorContactInfo/Iptc4xmpCore:CiAdrExtadr'
+        );        
+    }
+  
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Contact.City=Contact.City'
+        );
+        edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Contact.City=Contact.City',
+            horizontal: align_fill,
+            xmp_ns_prefix: 'Iptc4xmpCore', 
+            xmp_namespace: 'http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/', 
+            xmp_path: 'CreatorContactInfo/Iptc4xmpCore:CiAdrCity'
+        );      
+    }
+  
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Contact.StateProvince=Contact.StateProvince'
+        );
+        edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Contact.StateProvince=Contact.StateProvince',
+            horizontal: align_fill,
+            xmp_ns_prefix: 'Iptc4xmpCore', 
+            xmp_namespace: 'http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/', 
+            xmp_path: 'CreatorContactInfo/Iptc4xmpCore:CiAdrRegion'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Contact.PostalCode=Contact.PostalCode'
+        );
+        edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Contact.PostalCode=Contact.PostalCode',
+            horizontal: align_fill,
+            xmp_ns_prefix: 'Iptc4xmpCore', 
+            xmp_namespace: 'http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/', 
+            xmp_path: 'CreatorContactInfo/Iptc4xmpCore:CiAdrPcode'
+        ); 
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Contact.Country=Contact.Country'
+        ); 
+        edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Contact.Country=Contact.Country',
+            horizontal: align_fill,
+            xmp_ns_prefix: 'Iptc4xmpCore', 
+            xmp_namespace: 'http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/', 
+            xmp_path: 'CreatorContactInfo/Iptc4xmpCore:CiAdrCtry'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_top,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Rights=Rights'
+        );
+        edit_text(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Rights=Rights',
+            container_type: alt_struct,
+            horizontal: align_fill,
+            height: 60,
+            xmp_ns_prefix: 'xmpRights',
+            xmp_namespace: 'http://ns.adobe.com/xap/1.0/rights/',
+            xmp_path: 'UsageTerms'
+        );
+        mru_popup(
+            no_checks: false,
+            container_type: alt_struct,
+            vertical: align_top,
+            xmp_ns_prefix: 'xmpRights',
+            xmp_namespace: 'http://ns.adobe.com/xap/1.0/rights/',
+            xmp_path: 'UsageTerms'
+        );
+    }
+  
+    separator(height: 10, width: 485, horizontal: align_fill);    
+    
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text();
+        static_text(
+            font: font_small,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Comment/List=* Multiple values may be separated by a semicolon'
+        );
+    }  
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text();
+        static_text(
+            font: font_small,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Comment/List=AVM Panels version 1.1,  March 2008 | Documentation at http://www.virtualastronomy.org/'
+        );
+    }  
+
+}
+</panel>

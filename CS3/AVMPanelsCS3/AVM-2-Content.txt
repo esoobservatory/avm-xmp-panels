@@ -1,0 +1,286 @@
+<?xml version="1.0">
+<!DOCTYPE panel SYSTEM "http://ns.adobe.com/custompanels/1.0">
+<panel version="1" type="custom_panel" title="$$$/FitsLiberator/Metadata/Panel/2-Content=Astro Content">
+group( spacing: gSpace, horizontal: align_fill, vertical: align_top ) {
+
+    group(placement: place_row, spacing: gSpace, horizontal: align_left, vertical: align_top, reverse: rtl_aware) {
+        static_text(
+            name: '$$$/FitsLiberator/Comment/howto=Use this panel to record the astronomical content and descriptive text.', 
+            font: font_small, 
+            vertical: align_center, 
+            horizontal: align_left, 
+            label: false);
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_top,
+            name: '$$$/FitsLiberator/Keyword/Title=Title'
+        );
+        edit_text(
+            fbname: '$$$/FitsLiberator/Keyword/Title=Title',
+            container_type: alt_struct,
+            horizontal: align_fill,
+            xmp_ns_prefix: 'dc',
+            xmp_namespace: xap_ns_dc, 
+            xmp_path: 'title'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_top,
+            name: '$$$/FitsLiberator/Keyword/Headline=Headline'
+        );
+        edit_text(
+            fbname: '$$$/FitsLiberator/Keyword/Headline=Headline',
+            v_scroller: true,
+            horizontal: align_fill,
+            height: 45,
+            xmp_ns_prefix: 'photoshop',
+            xmp_namespace: photoshop, 
+            xmp_path: 'Headline'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_top,
+            name: '$$$/FitsLiberator/Keyword/Description=Description'
+        );
+        edit_text(
+            fbname: '$$$/FitsLiberator/Keyword/Description=Description',
+            height: 150,
+            container_type: alt_struct,
+            v_scroller: true,
+            horizontal: align_fill,
+            xmp_ns_prefix: 'dc',
+            xmp_namespace: xap_ns_dc, 
+            xmp_path: 'description'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Keyword/Subject.Category=Subject.Category*'
+        );
+        cat_container_edit_text(
+            fbname: '$$$/FitsLiberator/Keyword/Subject.Category=Subject.Category',
+            preserve_commas: false,
+            container_type: bag_struct,
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Subject.Category'
+        );
+    }
+    
+    group(placement: place_row, horizontal: align_fill) {
+        static_text();
+        static_text(
+            font: font_small,
+            name: '$$$/FitsLiberator/Comment/Subject.Category=Category codes (e.g. B.2.5.) are defined at http://www.virtualastronomy.org/'
+        );
+    }    
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Keyword/Subject.Name=Subject.Name*'
+        );
+        cat_container_edit_text(
+            fbname: '$$$/FitsLiberator/Keyword/Subject.Name=Subject.Name',
+            container_type: bag_struct,
+            preserve_commas: false,         
+            horizontal: align_fill,
+            xmp_ns_prefix: 'dc',
+            xmp_namespace: xap_ns_dc, 
+            xmp_path: 'subject'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Keyword/Distance=Distance*'
+        );
+        cat_container_edit_text(
+            fbname: '$$$/FitsLiberator/Keyword/Distance=Distance',
+            container_type: seq_struct,
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/', 
+            xmp_path: 'Distance'
+        );
+        
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Keyword/Distance.Notes=Distance.Notes'
+        );
+        edit_text(
+            fbname: '$$$/FitsLiberator/Keyword/Distance.Notes=Distance.Notes',
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Distance.Notes'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Keyword/ReferenceURL=ReferenceURL'
+        );
+        edit_text(
+            fbname: '$$$/FitsLiberator/Keyword/ReferenceURL=ReferenceURL',
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'ReferenceURL'
+        );
+        mru_popup(
+            no_checks: false,
+            container_type: single_value,
+            vertical: align_center,        
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'ReferenceURL'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_top,
+            name: '$$$/FitsLiberator/Keyword/Credit=Credit'
+        );
+        edit_text(
+            fbname: '$$$/FitsLiberator/Keyword/Credit=Credit',
+            horizontal: align_fill,
+            xmp_ns_prefix: 'photoshop',
+            xmp_namespace: photoshop, 
+            xmp_path: 'Credit'
+        );
+        mru_popup(
+            no_checks: false,
+            container_type: single_value,
+            vertical: align_top,        
+            xmp_ns_prefix: 'photoshop',
+            xmp_namespace: photoshop, 
+            xmp_path: 'Credit'
+        );
+    }
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Keyword/Date=Date'
+        );
+        date_edit_text(
+            fbname: '$$$/FitsLiberator/Keyword/Date=Date',
+            horizontal: align_fill,
+            xmp_ns_prefix: 'photoshop',
+            xmp_namespace: photoshop, 
+            xmp_path: 'DateCreated'
+        );
+        mru_popup(
+            no_checks: false,
+            container_type: single_value,
+            vertical: align_center,        
+            xmp_ns_prefix: 'photoshop',
+            xmp_namespace: photoshop, 
+            xmp_path: 'DateCreated'
+        );
+        
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Keyword/ID=ID'
+        );
+        edit_text(
+            fbname: '$$$/FitsLiberator/Keyword/ID=ID',
+            horizontal: align_fill,
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'ID'
+        );
+        mru_popup(
+            no_checks: false,
+            container_type: single_value,
+            vertical: align_center,        
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'ID'
+        );
+    }
+
+    group(placement: place_row, horizontal: align_fill) {
+        static_text();
+        static_text(
+            font: font_small,
+            name: '$$$/FitsLiberator/Comment/Subject.Category=Enter date according to locale setting; e.g. mm/dd/yyy (US), dd/mm/yyyy (UK), dd.mm.yyyy (DDR) etc.'
+        );
+    }    
+
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Keyword/Type=Type'
+        );
+        popup(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Type=Type',
+            horizontal: align_fill,
+            items: '$$$/FitsLiberator/Completion/Type=Undefined{};Artwork{Artwork};Observation{Observation};Photograph{Photograph};Simulation{Simulation};Planetary{Planetary};Collage{Collage};Chart{Chart}',
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Type'
+        );   
+            static_text(
+            font: font_big_right,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Metadata/Keyword/Image.ProductQuality=Image.ProductQuality'
+        );
+        popup(
+            fbname: '$$$/FitsLiberator/Metadata/Keyword/Image.ProductQuality=Image.ProductQuality',
+            horizontal: align_fill,
+            items: '$$$/FitsLiberator/Completion/Image.ProductQuality=Undefined{};Good{Good};Moderate{Moderate};Poor{Poor}',
+            xmp_ns_prefix: 'avm',
+            xmp_namespace: 'http://www.communicatingastronomy.org/avm/1.0/',
+            xmp_path: 'Image.ProductQuality'
+        );
+	}
+    
+    separator(height: 10, width: 485, horizontal: align_fill);    
+    
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text();
+        static_text(
+            font: font_small,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Comment/List=* Multiple values may be separated by a semicolon'
+         
+        );
+    }
+        
+    group( placement: place_row, horizontal: align_fill ) {
+        static_text();
+        static_text(
+            font: font_small,
+            vertical: align_center,
+            name: '$$$/FitsLiberator/Comment/List=AVM Panels version 1.1,  March 2008 | Documentation at http://www.virtualastronomy.org/'
+        );
+    }  
+
+}
+</panel>
