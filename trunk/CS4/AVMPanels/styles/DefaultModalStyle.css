@@ -1,0 +1,133 @@
+/* CSS file */
+
+global {
+	roll-over-color: #73C3E1;
+	selection-color: #2792BF;
+	theme-color: #2792BF;
+	disabled-color: #000000;
+	font-size: 11;
+	font-family: Segoe, "Lucida Grande", Tahoma, "_sans";
+}
+
+Application { 
+	color: #000000;
+	background-gradient-alphas: 1.0, 1.0;
+	background-color: #ededed;
+	background-gradient-colors: #ededed, #ededed;
+	padding-top: 5;
+	padding-bottom: 5;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+TabNavigator { 
+	color: #000000;
+	background-color: #ededed;
+	border-color: #909090;
+	border-sides: "top"; 
+	borderStyle: solid;
+	padding-top: 5;
+	padding-bottom: 0;
+	paddingLeft: 0;
+	paddingRight: 0;
+	left: 0;
+	right: 0;
+	tabOffset: 7;
+	tabHeight: 22;
+	color: #000000;
+	tab-style-name: "XMPTabs";
+	first-tab-style-name: "XMPTabs";
+	last-tab-style-name: "XMPTabs";
+	selected-tab-text-style-name: "XMPSelectedTabs";
+}
+
+.XMPTabs {
+	fill-colors: #e6e6e6, #bcbcbc; 
+	font-size: 11;
+	/* fontWeight: normal; */
+	padding-left: 10;
+	padding-right: 10;
+}
+
+.XMPSelectedTabs {
+	font-size: 11;
+	padding-left: 10;
+	padding-right: 10;
+}
+
+Form {
+	padding-left: 10;
+	padding-right: 10;
+	padding-top: 10;
+	padding-bottom: 10;
+	horizontal-gap: 3;
+	vertical-gap: 5;
+	indicator-gap: 3;
+	color: #000000;
+}
+
+FormItem, HBox {
+	disabled-overlay-alpha: 0;
+	horizontal-gap: 3;
+}
+
+TextInput { 
+    color: #000000;
+    background-color: #ffffff;
+	background-disabled-color: #efefef;
+    border-style: solid;
+	alpha: "0.8";
+}
+
+TextArea { 
+    color: #000000;
+    background-color: #ffffff;
+	background-disabled-color: #efefef;
+	alpha: "0.8";
+}
+
+CheckBox {
+	text-roll-over-color: #666666;
+}
+
+ComboBox {
+	dropdown-style-name: comboBoxDropdown;
+	color: #000000;
+	text-roll-over-color: #000000;
+	disabled-color: #AAAAAA;
+	font-weight: normal;
+	open-duration: 0;
+	close-duration: 0;
+}
+
+.comboBoxDropdown {
+	dropShadowEnabled: true;
+	backgroundColor: #ededed;
+}
+
+Button {
+    color: #000000;
+    font-weight: "normal";
+}
+
+DateChooser {
+	today-color: #FF0000;
+	rollOverColor: #aadeff;
+   	selectionColor: #2ca8da;
+}
+
+HRule {
+	stroke-width: 2;
+	stroke-color: #cdcdcd;
+	shadow-color: #909090; 
+}
+	
+XMPSeparator {
+	padding-top: 5;
+	padding-bottom: 5;
+}
+
+ToolTip
+{
+	fontSize: 10;
+}
