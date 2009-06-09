@@ -387,7 +387,7 @@ original creator." horizontalAlign="left" y="28">
 			</fi:XMPFormItem>
 			<fi:XMPFormItem 
 					label="$$$/xmp/sdk/custompanels/PublisherMetadata/ResourceID=ResourceID:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/PublisherMetadata/ResourceIDToolTip=This identifies a specific “instance” of a resource; e.g. one image in one 
+					labelTooltip="$$$/xmp/sdk/custompanels/PublisherMetadata/ResourceIDToolTip=This identifies a specific 'instance' of a resource; e.g. one image in one 
 		file format at one resolution. This allows the same resource (image) to 
 		be offered in different formats and resolutions. Together with the 
 		PublisherID, each registered resource is uniquely identified in the 
@@ -404,7 +404,7 @@ original creator." horizontalAlign="left" y="28">
 			<fi:XMPFormItem 
 					label="$$$/xmp/sdk/custompanels/PublisherMetadata/RelatedResources=RelatedResources:" 
 					labelTooltip="$$$/xmp/sdk/custompanels/PublisherMetadata/RelatedResourcesToolTip=The format is a list of PublisherID/ID values that will reference specific 
-		resources registered in VAMP (though not specific “instances”)." y="112">
+		resources registered in VAMP (though not specific 'instances')." y="112">
 				<fi:XMPTextInput xmpPath="avm:RelatedResources" xmpArray="bag" xmpType="Text"/>
 			</fi:XMPFormItem>
 			<fi:XMPFormItem 
