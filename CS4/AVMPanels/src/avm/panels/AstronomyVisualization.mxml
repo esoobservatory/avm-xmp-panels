@@ -14,14 +14,13 @@
 	
 	<mx:Script>
 		<![CDATA[
-            
+            import com.adobe.xmp.utils.ZStringManager;
 			// Data
 			[Bindable]
 			public var spectralColorChoices:Array = ["Purple", "Blue", "Cyan", "Green", "Yellow", "Orange", "Red", "Magenta", "Grayscale", "Pseudocolor"];
 			
 			[Bindable]
-			public var spectralBandChoices:Array = ["Radio", "Millimeter", "Infrared", "Optical", "Ultraviolet", "X-ray", "Gamma-ray"];	
-						
+			public var spectralBandChoices:Array = ["Radio", "Millimeter", "Infrared", "Optical", "Ultraviolet", "X-ray", "Gamma-ray"];			
 		]]>
 	</mx:Script>
 			
@@ -34,387 +33,716 @@
 		Creator Metadata
 	-->
 	<mx:Label text="Creator Metadata" fontWeight="bold"/>
-
+			<!-- Creator -->
 			<fi:XMPFormItem
 					label="$$$/xmp/sdk/custompanels/AVM/Creator=Creator"
 					labelTooltip="$$$/xmp/sdk/custompanels/AVM/CreatorToolTip=Original creator of the resource at the organizational level." horizontalAlign="left" y="0" left="0">
-				<fi:XMPTextInput xmpPath="photoshop:Source" xmpType="Text" />
+					<mx:VBox width="100%">
+						<fi:XMPTextInput xmpPath="photoshop:Source" xmpType="Text" />
+						<mx:HBox>
+							<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/CreatorToolTip')}" />
+						</mx:HBox>		
+					</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- CreatorURL -->
 			<fi:XMPFormItem
 					label="$$$/xmp/sdk/custompanels/AVM/CiUrlWork=CreatorURL"
 					labelTooltip="$$$/xmp/sdk/custompanels/AVM/CreatorURLToolTip=A simple URL pointing to the (top level) outreach webpage for the 
 original creator." horizontalAlign="left" y="28">
-				<fi:XMPTextInput xmpPath="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiUrlWork"/>
-			</fi:XMPFormItem>	
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiUrlWork"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/CreatorURLToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
+			</fi:XMPFormItem>
+			
+			<!-- Contact.Name -->
 			<fi:XMPFormItem
 					label="$$$/xmp/sdk/custompanels/AVM/Contact.Name=Contact.Name"
 					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Contact.NameToolTip=Name(s) of the primary contact(s) for the resource." y="56" x="0">
-				<fi:XMPTextInput xmpPath="dc:creator" xmpArray="seq" xmpType="Text"/>
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="dc:creator" xmpArray="seq" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Contact.NameToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Contact.Email -->
 			<fi:XMPFormItem
 					label="$$$/xmp/sdk/custompanels/AVM/Contact.Email=Contact.Email"
 					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Contact.EmailToolTip=Email(s) of the primary contact(s) for the resource." y="84" x="0"
 					id="contactEmail">
-				<fi:XMPTextInput xmpPath="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiEmailWork"/>
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiEmailWork"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Contact.EmailToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Contact.Telephone -->
 			<fi:XMPFormItem
 					label="$$$/xmp/sdk/custompanels/AVM/Contact.Telephone=Contact.Telephone"
 					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Contact.TelephoneToolTip=Phone number of the primary contact(s) for the resource." y="112" x="0"
 					id="contactPhone">
-				<fi:XMPTextInput xmpPath="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiTelWork"/>
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiTelWork"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Contact.TelephoneToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Contact.Address -->
 			<fi:XMPFormItem
 					label="$$$/xmp/sdk/custompanels/AVM/Contact.Address=Contact.Address"
 					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Contact.AddressToolTip=Street address of the primary contact for the resource." y="140" x="0">
-				<fi:XMPTextInput xmpPath="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiAdrExtadr"/>
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiAdrExtadr"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Contact.AddressToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Contact.City -->
 			<fi:XMPFormItem
 					label="$$$/xmp/sdk/custompanels/AVM/Contact.City=Contact.City"
 					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Contact.CityToolTip=City of the primary contact for the resource." y="168" x="0">
-				<fi:XMPTextInput xmpPath="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiAdrCity"/>
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiAdrCity"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Contact.CityToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Contact.StateProvince -->
 			<fi:XMPFormItem
 					label="$$$/xmp/sdk/custompanels/AVM/Contact.StateProvince=Contact.StateProvince"
 					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Contact.StateProvinceToolTip=City of the primary contact for the resource." y="196" x="0">
-				<fi:XMPTextInput xmpPath="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiAdrRegion"/>
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiAdrRegion"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Contact.StateProvinceToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Contact.PostalCode -->
 			<fi:XMPFormItem
 					label="$$$/xmp/sdk/custompanels/AVM/Contact.PostalCode=Contact.PostalCode"
 					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Contact.PostalCodeToolTip=Zip or postal code of the primary contact for the resource." y="224" x="0">
-				<fi:XMPTextInput xmpPath="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiAdrPcode"/>
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiAdrPcode"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Contact.PostalCodeToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Contact.Country -->
 			<fi:XMPFormItem
 					label="$$$/xmp/sdk/custompanels/AVM/Contact.Country=Contact.Country"
-					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Contact.PostalCodeToolTip=Country of the primary contact for the resource." y="252" x="0">
-				<fi:XMPTextInput xmpPath="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiAdrCtry"/>
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Contact.CountryToolTip=Country of the primary contact for the resource." y="252" x="0">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiAdrCtry"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Contact.CountryToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Rights -->
 			<fi:XMPFormItem
 					label="$$$/xmp/sdk/custompanels/AVM/Rights=Rights"
 					labelTooltip="$$$/xmp/sdk/custompanels/AVM/RightsToolTip=Copyright and related intellectual property rights description." y="280" x="0">
-				<fi:XMPTextInput xmpPath="xmpRights:UsageTerms" xmpType="Localized"/>
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="xmpRights:UsageTerms" xmpType="Localized"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/RightsToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
 			
+			
+			<!--
+				Content Metadata
+			-->
 			<mx:HRule width="756" height="10"/>
 			<mx:Label text="Content Metadata" fontWeight="bold"/>
 			
+			<!-- Title -->
 			<fi:XMPFormItem
-					label="$$$/xmp/sdk/custompanels/ContentMetadata/Title=Title:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ContentMetadata/TitleToolTip=General descriptive title given to the image resource." y="0">
-				<fi:XMPTextInput xmpPath="dc:title" xmpType="Localized"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Title=Title:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/TitleToolTip=General descriptive title given to the image resource." y="0">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="dc:title" xmpType="Localized"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/TitleToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Headline -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ContentMetadata/Headline=Headline:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ContentMetadata/HeadlineToolTip=Short description of the full caption." y="28" x="0">
-				<fi:XMPTextArea xmpPath="photoshop:Headline" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Headline=Headline:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/HeadlineToolTip=Short description of the full caption." y="28" x="0">
+				<mx:VBox width="100%">
+					<fi:XMPTextArea xmpPath="photoshop:Headline" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/HeadlineToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Description -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ContentMetadata/Description=Description:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ContentMetadata/DescriptionToolTip=Full caption and related description text for the image resource." y="56" x="0">
-				<fi:XMPTextArea xmpPath="dc:description" xmpType="Localized"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Description=Description:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/DescriptionToolTip=Full caption and related description text for the image resource." y="56" x="0">
+				<mx:VBox width="100%">
+					<fi:XMPTextArea xmpPath="dc:description" xmpType="Localized"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/DescriptionToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Subject.Category -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ContentMetadata/Subject.Category=Subject.Category:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ContentMetadata/Subject.CategoryToolTip=The type(s) of object or objects in the resource, or general subject 
-		matter of an image, taken from a controlled vocabulary taxonomy." y="108" x="0">
-				<fi:XMPTextInput xmpPath="avm:Subject.Category" xmpArray="bag" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Subject.Category=Subject.Category:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Subject.CategoryToolTip=The type(s) of object or objects in the resource, or general subject matter of an image, taken from a controlled vocabulary taxonomy." y="108" x="0">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:Subject.Category" xmpArray="bag" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Subject.CategoryToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Subject.Name -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ContentMetadata/Subject.Name=Subject.Name:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ContentMetadata/Subject.NameToolTip=Proper names/catalog numbers for key objects/subjects in the image 
-		field." y="136" x="0">
-				<fi:XMPTextInput xmpPath="dc:subject" xmpArray="bag" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Subject.Name=Subject.Name:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Subject.NameToolTip=Proper names/catalog numbers for key objects/subjects in the image field." y="136" x="0">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="dc:subject" xmpArray="bag" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Subject.NameToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Distance -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ContentMetadata/Distance=Distance:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ContentMetadata/DistanceToolTip=The distance to the object, measured in light years (list element 1) 
-		and/or redshift (list element 2)." y="164" x="0">
-				<fi:XMPTextInput xmpPath="avm:Distance" xmpArray="seq" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Distance=Distance:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/DistanceToolTip=The distance to the object, measured in light years (list element 1) and/or redshift (list element 2)." y="164" x="0">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:Distance" xmpArray="seq" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/DistanceToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Distance.Notes -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ContentMetadata/Distance.Notes=Distance.Notes:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ContentMetadata/Distance.NotesToolTip=Comment about the contents of the Distance tag." y="192" x="0">
-				<fi:XMPTextArea xmpPath="avm:Distance.Notes" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Distance.Notes=Distance.Notes:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Distance.NotesToolTip=Comment about the contents of the Distance tag." y="192" x="0">
+				<mx:VBox width="100%">
+					<fi:XMPTextArea xmpPath="avm:Distance.Notes" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Distance.NotesToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- ReferenceURL -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ContentMetadata/ReferenceURL=ReferenceURL:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ContentMetadata/ReferenceURLToolTip=Webpage containing more information about this specific image." y="244" x="0">
-				<fi:XMPTextInput xmpPath="avm:ReferenceURL" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/ReferenceURL=ReferenceURL:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/ReferenceURLToolTip=Webpage containing more information about this specific image." y="244" x="0">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:ReferenceURL" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/ReferenceURLToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Credit -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ContentMetadata/Credit=Credit:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ContentMetadata/CreditToolTip=The minimum information that the Publisher would like to see mentioned 
-		when the resource is used." y="272" x="0">
-				<fi:XMPTextInput xmpPath="photoshop:Credit" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Credit=Credit:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/CreditToolTip=The minimum information that the Publisher would like to see mentioned	when the resource is used." y="272" x="0">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="photoshop:Credit" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/CreditToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Date -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ContentMetadata/Date=Date:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ContentMetadata/DateToolTip=Date that the resource was created or made available. (YYYY-MM-DD)." y="300" x="0">
-				<fi:XMPTextInput xmpPath="photoshop:DateCreated" xmpType="Date"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Date=Date:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/DateToolTip=Date that the resource was created or made available. (YYYY-MM-DD)." y="300" x="0">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="photoshop:DateCreated" xmpType="Date"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/DateToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- ID -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ContentMetadata/ID=ID:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ContentMetadata/IDToolTip=This is an identifier for the resource that is unique to the creator." y="328" x="0">
-				<fi:XMPTextInput xmpPath="avm:ID" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/ID=ID:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/IDToolTip=This is an identifier for the resource that is unique to the creator." y="328" x="0">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:ID" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/IDToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Type -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ContentMetadata/Type=Type:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ContentMetadata/TypeToolTip=The type of image/media resource." y="356" x="0">
-						<fi:XMPComboBox writeEmptyValues="false" xmpPath="avm:Type">
-							<fi:dataProvider>
-								<mx:ArrayCollection id="typeChoices">
-									<mx:Object label="Undefined" data=""/>
-									<mx:Object label="Observation" data="Observation"/>
-									<mx:Object label="Artwork" data="Artwork"/>
-									<mx:Object label="Photographic" data="Photographic"/>
-									<mx:Object label="Planetary" data="Planetary"/>
-									<mx:Object label="Simulation" data="Simulation"/>
-									<mx:Object label="Collage" data="Collage"/>
-								</mx:ArrayCollection>
-							</fi:dataProvider>
-						</fi:XMPComboBox>
+					label="$$$/xmp/sdk/custompanels/AVM/Type=Type:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/TypeToolTip=The type of image/media resource." y="356" x="0">
+				<mx:VBox width="100%">
+					<fi:XMPComboBox writeEmptyValues="false" xmpPath="avm:Type">
+						<fi:dataProvider>
+							<mx:ArrayCollection id="typeChoices">
+								<mx:Object label="Undefined" data=""/>
+								<mx:Object label="Observation" data="Observation"/>
+								<mx:Object label="Artwork" data="Artwork"/>
+								<mx:Object label="Photographic" data="Photographic"/>
+								<mx:Object label="Planetary" data="Planetary"/>
+								<mx:Object label="Simulation" data="Simulation"/>
+								<mx:Object label="Collage" data="Collage"/>
+							</mx:ArrayCollection>
+						</fi:dataProvider>
+					</fi:XMPComboBox>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/TypeToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Image.ProductQuality -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ContentMetadata/Image.ProductQuality=Image.ProductQuality:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ContentMetadata/Image.ProductQualityToolTip=Qualitative image quality assessment." y="386" x="0">
-						<fi:XMPComboBox writeEmptyValues="false" xmpPath="avm:Image.ProductQuality">
-							<fi:dataProvider>
-								<mx:ArrayCollection id="imageQualityChoices">
-									<mx:Object label="Undefined" data="" />
-									<mx:Object label="Good" data="Good"/>
-									<mx:Object label="Moderate" data="Moderate"/>
-									<mx:Object label="Poor" data="Poor"/>
-								</mx:ArrayCollection>
-							</fi:dataProvider>
-						</fi:XMPComboBox>
+					label="$$$/xmp/sdk/custompanels/AVM/Image.ProductQuality=Image.ProductQuality:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Image.ProductQualityToolTip=Qualitative image quality assessment." y="386" x="0">
+				<mx:VBox width="100%">
+					<fi:XMPComboBox writeEmptyValues="false" xmpPath="avm:Image.ProductQuality">
+						<fi:dataProvider>
+							<mx:ArrayCollection id="imageQualityChoices">
+								<mx:Object label="Undefined" data="" />
+								<mx:Object label="Good" data="Good"/>
+								<mx:Object label="Moderate" data="Moderate"/>
+								<mx:Object label="Poor" data="Poor"/>
+							</mx:ArrayCollection>
+						</fi:dataProvider>
+					</fi:XMPComboBox>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Image.ProductQualityToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
 
-	<!-- 
-		Observation Metadata
-	-->
-
+			<!-- 
+				Observation Metadata
+			-->
 			<mx:HRule width="756" height="10"/>
 			<mx:Label text="Observation Metadata" fontWeight="bold"/>
 			
+			<!-- Facility -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ObservationMetadata/Facility=Facility:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ObservationMetadata/FacilityToolTip=Telescopes or observatories used for the observations." y="0">
-				<fi:XMPTextInput xmpPath="avm:Facility" xmpArray="seq" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Facility=Facility:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/FacilityToolTip=Telescopes or observatories used for the observations." y="0">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:Facility" xmpArray="seq" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/FacilityToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Instrument -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ObservationMetadata/Instrument=Instrument:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ObservationMetadata/InstrumentToolTip=Instrument used to collect the data. One Instrument entry per exposure." y="28">
-				<fi:XMPTextInput xmpPath="avm:Instrument" xmpArray="seq" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Instrument=Instrument:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/InstrumentToolTip=Instrument used to collect the data. One Instrument entry per exposure." y="28">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:Instrument" xmpArray="seq" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/InstrumentToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Spectral.ColorAssignment -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ObservationMetadata/Spectral.ColorAssignment=Spectral.ColorAssignment:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ObservationMetadata/Spectral.ColorAssignmentToolTip=The output color that is assigned to an exposure. One 
-		Spectral.ColorAssignment entry per exposure." y="56">
+					label="$$$/xmp/sdk/custompanels/AVM/Spectral.ColorAssignment=Spectral.ColorAssignment:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Spectral.ColorAssignmentToolTip=The output color that is assigned to an exposure. One Spectral.ColorAssignment entry per exposure." y="56">
 				<mx:VBox width="100%">
 					<fi:XMPTextAreaMRU xmpPath="avm:Spectral.ColorAssignment" writeEmptyValues="false" xmpArray="seq" enableMRU="false" dataProvider="{spectralColorChoices}"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Spectral.ColorAssignmentToolTip')}" />
+					</mx:HBox>	
 				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Spectral.Band -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ObservationMetadata/Spectral.Band=Spectral.Band:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ObservationMetadata/Spectral.BandToolTip=Waveband of the component exposure from a pre-defined list defining 
-		the general part of the spectrum covered. One Spectral.Band entry per 
-		exposure." y="108">
+					label="$$$/xmp/sdk/custompanels/AVM/Spectral.Band=Spectral.Band:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Spectral.BandToolTip=Waveband of the component exposure from a pre-defined list defining the general part of the spectrum covered. One Spectral.Band entry per exposure." y="108">
 				<mx:VBox width="100%">
 					<fi:XMPTextAreaMRU xmpPath="avm:Spectral.Band" writeEmptyValues="false" xmpArray="seq" enableMRU="false" dataProvider="{spectralBandChoices}"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Spectral.BandToolTip')}" />
+					</mx:HBox>	
 				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Spectral.Bandpass -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ObservationMetadata/Spectral.Bandpass=Spectral.Bandpass:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ObservationMetadata/Spectral.BandpassToolTip=Bandpass of the individual exposure. One Spectral.Bandpass entry per 
-		exposure." y="160">
-				<fi:XMPTextInput xmpPath="avm:Spectral.Bandpass" xmpArray="seq" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Spectral.Bandpass=Spectral.Bandpass:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Spectral.BandpassToolTip=Bandpass of the individual exposure. One Spectral.Bandpass entry per exposure." y="160">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:Spectral.Bandpass" xmpArray="seq" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Spectral.BandpassToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Spectral.CentralWavelength -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ObservationMetadata/Spectral.CentralWavelength=Spectral.CentralWavelength:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ObservationMetadata/Spectral.CentralWavelengthToolTip=Central wavelength of the filter used for the individual exposure 
-		measured in nanometers. One Spectral.CentralWavelength entry per 
-		exposure." y="188">
-				<fi:XMPTextInput xmpPath="avm:Spectral.CentralWavelength" xmpArray="seq" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Spectral.CentralWavelength=Spectral.CentralWavelength:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Spectral.CentralWavelengthToolTip=Central wavelength of the filter used for the individual exposure measured in nanometers. One Spectral.CentralWavelength entry per	exposure." y="188">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:Spectral.CentralWavelength" xmpArray="seq" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Spectral.CentralWavelengthToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Spectral.Notes -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ObservationMetadata/Spectral.Notes=Spectral.Notes:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ObservationMetadata/Spectral.NotesToolTip=Free-text field to allow for more detailed discussions of bandpasses and 
-		color mappings." y="216">
-				<fi:XMPTextArea xmpPath="avm:Spectral.Notes" xmpType="Localized"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Spectral.Notes=Spectral.Notes:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Spectral.NotesToolTip=Free-text field to allow for more detailed discussions of bandpasses and color mappings." y="216">
+				<mx:VBox width="100%">
+					<fi:XMPTextArea xmpPath="avm:Spectral.Notes" xmpType="Localized"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Spectral.NotesToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Temporal.StartTime -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ObservationMetadata/Temporal.StartTime=Temporal.StartTime:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ObservationMetadata/Temporal.StartTimeToolTip=Start time of the exposure in ISO 8601 format 'yyyy-mm-ddThh:mm' 
-		(UT; time portion is optional). One Temporal.StartTime entry per 
-		exposure." y="244">
-				<fi:XMPTextInput xmpPath="avm:Temporal.StartTime" xmpArray="seq" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Temporal.StartTime=Temporal.StartTime:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Temporal.StartTimeToolTip=Start time of the exposure in ISO 8601 format 'yyyy-mm-ddThh:mm' (UT; time portion is optional). One Temporal.StartTime entry per exposure." y="244">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:Temporal.StartTime" xmpArray="seq" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Temporal.StartTimeToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Temporal.IntegrationTime -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ObservationMetadata/Temporal.IntegrationTime=Temporal.IntegrationTime:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ObservationMetadata/Temporal.IntegrationTimeToolTip=The exposure time in seconds. One Temporal.IntegrationTime entry 
-		per exposure." y="272">
-				<fi:XMPTextInput xmpPath="avm:Temporal.IntegrationTime" xmpArray="seq" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Temporal.IntegrationTime=Temporal.IntegrationTime:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Temporal.IntegrationTimeToolTip=The exposure time in seconds. One Temporal.IntegrationTime entry	per exposure." y="272">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:Temporal.IntegrationTime" xmpArray="seq" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Temporal.IntegrationTimeToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- DatasetID -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/ObservationMetadata/DatasetID=DatasetID:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/ObservationMetadata/DatasetIDToolTip=Identifier for the source FITS dataset for each exposure in the image. If 
-		available, this can be a VO-compliant reference to the dataset 
-		[ivo://AuthorityID/ResourceKey]. One DatasetID entry per exposure." y="300">
-				<fi:XMPTextInput xmpPath="avm:DatasetID" xmpArray="seq" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/DatasetID=DatasetID:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/DatasetIDToolTip=Identifier for the source FITS dataset for each exposure in the image. If available, this can be a VO-compliant reference to the dataset [ivo://AuthorityID/ResourceKey]. One DatasetID entry per exposure." y="300">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:DatasetID" xmpArray="seq" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/DatasetIDToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
 	
-	<!-- 
-		Spatial Metadata
-	-->
-
+			<!-- 
+				Coordinate Metadata
+			-->
 			<mx:HRule width="756" height="10"/>
-			<mx:Label text="Spatial Metadata" fontWeight="bold"/>
+			<mx:Label text="Coordinate Metadata" fontWeight="bold"/>
 			
+			<!-- Spatial.CoordinateFrame -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.CoordinateFrame=Spatial.CoordinateFrame:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.CoordinateFrameToolTip=Coordinate system reference frame. Spatial.CoordinateFrame should 
-		be chosen from a pre-defined list." y="0">
-						<fi:XMPComboBox writeEmptyValues="false" xmpPath="avm:Spatial.CoordinateFrame">
-							<fi:dataProvider>
-								<mx:ArrayCollection id="coordFrameChoices">
-									<mx:Object label="Undefined" data=""/>
-									<mx:Object label="ICRS" data="ICRS"/>
-									<mx:Object label="FK5" data="FK5"/>
-									<mx:Object label="FK4" data="FK4"/>
-									<mx:Object label="ECL" data="ECL"/>
-									<mx:Object label="GAL" data="GAL"/>
-									<mx:Object label="SGAL" data="SGAL"/>
-								</mx:ArrayCollection>
-							</fi:dataProvider>
-						</fi:XMPComboBox>		
+					label="$$$/xmp/sdk/custompanels/AVM/Spatial.CoordinateFrame=Spatial.CoordinateFrame:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Spatial.CoordinateFrameToolTip=Coordinate system reference frame. Spatial.CoordinateFrame should	be chosen from a pre-defined list." y="0">
+				<mx:VBox width="100%">
+					<fi:XMPComboBox writeEmptyValues="false" xmpPath="avm:Spatial.CoordinateFrame">
+						<fi:dataProvider>
+							<mx:ArrayCollection id="coordFrameChoices">
+								<mx:Object label="Undefined" data=""/>
+								<mx:Object label="ICRS" data="ICRS"/>
+								<mx:Object label="FK5" data="FK5"/>
+								<mx:Object label="FK4" data="FK4"/>
+								<mx:Object label="ECL" data="ECL"/>
+								<mx:Object label="GAL" data="GAL"/>
+								<mx:Object label="SGAL" data="SGAL"/>
+							</mx:ArrayCollection>
+						</fi:dataProvider>
+					</fi:XMPComboBox>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Spatial.CoordinateFrameToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Spatial.Equinox -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.Equinox=Spatial.Equinox:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.EquinoxToolTip=Equinox for Spatial.CoordinateFrame in decimal years." y="30">
-				<fi:XMPTextInput xmpPath="avm:Spatial.Equinox" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Spatial.Equinox=Spatial.Equinox:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Spatial.EquinoxToolTip=Equinox for Spatial.CoordinateFrame in decimal years." y="30">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:Spatial.Equinox" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Spatial.EquinoxToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Spatial.ReferenceValue -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.ReferenceValue=Spatial.ReferenceValue:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.ReferenceValueToolTip=Reference coordinates (RA and Dec) for the image (2 element list in 
-		decimal degrees)." y="58">
-				<fi:XMPTextInput xmpPath="avm:Spatial.ReferenceValue" xmpArray="seq" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Spatial.ReferenceValue=Spatial.ReferenceValue:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Spatial.ReferenceValueToolTip=Reference coordinates (RA and Dec) for the image (2 element list in	decimal degrees)." y="58">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:Spatial.ReferenceValue" xmpArray="seq" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Spatial.ReferenceValueToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Spatial.ReferenceDimension -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.ReferenceDimension=Spatial.ReferenceDimension:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.ReferenceDimensionToolTip=Size of the image in pixels (2 element list)." y="86">
-				<fi:XMPTextInput xmpPath="avm:Spatial.ReferenceDimension" xmpArray="seq" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Spatial.ReferenceDimension=Spatial.ReferenceDimension:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Spatial.ReferenceDimensionToolTip=Size of the image in pixels (2 element list)." y="86">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:Spatial.ReferenceDimension" xmpArray="seq" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Spatial.ReferenceDimensionToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Spatial.ReferencePixel -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.ReferencePixel=Spatial.ReferencePixel:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.ReferencePixelToolTip=X,Y coordinates of the pixel in the image to which the reference 
-		coordinate (Spatial.ReferenceValue) refers (2 element list)." y="114">
-				<fi:XMPTextInput xmpPath="avm:Spatial.ReferencePixel" xmpArray="seq" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Spatial.ReferencePixel=Spatial.ReferencePixel:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Spatial.ReferencePixelToolTip=X,Y coordinates of the pixel in the image to which the reference	coordinate (Spatial.ReferenceValue) refers (2 element list)." y="114">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:Spatial.ReferencePixel" xmpArray="seq" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Spatial.ReferencePixelToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Spatial.Scale -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.Scale=Spatial.Scale:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.ScaleToolTip=Spatial scale of the image in number of degrees/pixel (2 element list)." y="142">
-				<fi:XMPTextInput xmpPath="avm:Spatial.Scale" xmpArray="seq" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Spatial.Scale=Spatial.Scale:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Spatial.ScaleToolTip=Spatial scale of the image in number of degrees/pixel (2 element list)." y="142">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:Spatial.Scale" xmpArray="seq" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Spatial.ScaleToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Spatial.Rotation -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.Rotation=Spatial.Rotation:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.RotationToolTip=Position angle of the Y axis in degrees measured east from north." y="170">
-				<fi:XMPTextInput xmpPath="avm:Spatial.Rotation" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Spatial.Rotation=Spatial.Rotation:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Spatial.RotationToolTip=Position angle of the Y axis in degrees measured east from north." y="170">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:Spatial.Rotation" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Spatial.RotationToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Spatial.CoordsystemProjection -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.CoordsystemProjection=Spatial.CoordsystemProjection:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.CoordsystemProjectionToolTip=A combination of the coordinate system and the projection of the image." y="198">
-						<fi:XMPComboBox writeEmptyValues="false" xmpPath="avm:Spatial.CoordsystemProjection">
-							<fi:dataProvider>
-								<mx:ArrayCollection id="coordProjChoices">
-									<mx:Object label="Undefined" data=""/>
-									<mx:Object label="TAN" data="TAN"/>
-									<mx:Object label="SIN" data="SIN"/>
-									<mx:Object label="ARC" data="ARC"/>
-									<mx:Object label="AIT" data="AIT"/>
-									<mx:Object label="CAR" data="CAR"/>
-									<mx:Object label="CEA" data="CEA"/>
-								</mx:ArrayCollection>
-							</fi:dataProvider>
-						</fi:XMPComboBox>
+					label="$$$/xmp/sdk/custompanels/AVM/Spatial.CoordsystemProjection=Spatial.CoordsystemProjection:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Spatial.CoordsystemProjectionToolTip=A combination of the coordinate system and the projection of the image." y="198">
+				<mx:VBox width="100%">
+					<fi:XMPComboBox writeEmptyValues="false" xmpPath="avm:Spatial.CoordsystemProjection">
+						<fi:dataProvider>
+							<mx:ArrayCollection id="coordProjChoices">
+								<mx:Object label="Undefined" data=""/>
+								<mx:Object label="TAN" data="TAN"/>
+								<mx:Object label="SIN" data="SIN"/>
+								<mx:Object label="ARC" data="ARC"/>
+								<mx:Object label="AIT" data="AIT"/>
+								<mx:Object label="CAR" data="CAR"/>
+								<mx:Object label="CEA" data="CEA"/>
+							</mx:ArrayCollection>
+						</fi:dataProvider>
+					</fi:XMPComboBox>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Spatial.CoordsystemProjectionToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Spatial.Quality -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.Quality=Spatial.Quality:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.QualityToolTip=This qualitatively describes the reliability of the spatial coordinate 
-		information in this metadata." y="228">
-						<fi:XMPComboBox writeEmptyValues="false" xmpPath="avm:Spatial.Quality">
-							<fi:dataProvider>
-								<mx:ArrayCollection id="spatialQualityChoices">
-									<mx:Object label="Undefined" data=""/>
-									<mx:Object label="Full" data="Full"/>
-									<mx:Object label="Position" data="Position"/>
-								</mx:ArrayCollection>
-							</fi:dataProvider>
-						</fi:XMPComboBox>
+					label="$$$/xmp/sdk/custompanels/AVM/Spatial.Quality=Spatial.Quality:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Spatial.QualityToolTip=This qualitatively describes the reliability of the spatial coordinate information in this metadata." y="228">
+				<mx:VBox width="100%">
+					<fi:XMPComboBox writeEmptyValues="false" xmpPath="avm:Spatial.Quality">
+						<fi:dataProvider>
+							<mx:ArrayCollection id="spatialQualityChoices">
+								<mx:Object label="Undefined" data=""/>
+								<mx:Object label="Full" data="Full"/>
+								<mx:Object label="Position" data="Position"/>
+							</mx:ArrayCollection>
+						</fi:dataProvider>
+					</fi:XMPComboBox>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Spatial.QualityToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Spatial.Notes -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.Notes=Spatial.Notes:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.NotesToolTip=Free-text description to expand further on coordinates/geometry of 
-		image." y="258">
-				<fi:XMPTextArea xmpPath="avm:Spatial.Notes" xmpType="Localized" />
+					label="$$$/xmp/sdk/custompanels/AVM/Spatial.Notes=Spatial.Notes:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Spatial.NotesToolTip=Free-text description to expand further on coordinates/geometry of image." y="258">
+				<mx:VBox width="100%">
+					<fi:XMPTextArea xmpPath="avm:Spatial.Notes" xmpType="Localized" />
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Spatial.NotesToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Spatial.FITSheader -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.FITSheader=Spatial.FITSheader:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.FITSheaderToolTip=Free-text representation of the FITS header from which the AVM spatial 
-		tags were derived." y="286">
-				<fi:XMPTextArea xmpPath="avm:Spatial.FITSheader" />
+					label="$$$/xmp/sdk/custompanels/AVM/Spatial.FITSheader=Spatial.FITSheader:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Spatial.FITSheaderToolTip=Free-text representation of the FITS header from which the AVM spatial tags were derived." y="286">
+				<mx:VBox width="100%">
+					<fi:XMPTextArea xmpPath="avm:Spatial.FITSheader" />
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Spatial.FITSheaderToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- Spatial.CDMatrix -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.CDMatrix=Spatial.CDMatrix:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/CoordinateMetadata/Spatial.CDMatrixToolTip=Matrix representation of scale/rotation terms." y="314">
-				<fi:XMPTextInput xmpPath="avm:Spatial.CDMatrix" xmpArray="seq" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Spatial.CDMatrix=Spatial.CDMatrix:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/Spatial.CDMatrixToolTip=Matrix representation of scale/rotation terms." y="314">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:Spatial.CDMatrix" xmpArray="seq" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/Spatial.CDMatrixToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
 
-	<!-- 
-		Publisher Metadata
-	-->
-
+			<!-- 
+				Publisher Metadata
+			-->
 			<mx:HRule width="756" height="10"/>
 			<mx:Label text="Publisher Metadata" fontWeight="bold"/>
 			
+			<!-- Publisher -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/PublisherMetadata/Publisher=Publisher:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/PublisherMetadata/PublisherToolTip=Publisher of the resource." x="0" y="0">
-				<fi:XMPTextInput xmpPath="avm:Publisher" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/Publisher=Publisher:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/PublisherToolTip=Publisher of the resource." x="0" y="0">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:Publisher" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/PublisherToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- PublisherID -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/PublisherMetadata/PublisherID=PublisherID:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/PublisherMetadata/PublisherIDToolTip=ID of publisher registered as VAMP providers." y="56">
-				<fi:XMPTextInput xmpPath="avm:PublisherID" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/PublisherID=PublisherID:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/PublisherIDToolTip=ID of publisher registered as VAMP providers." y="56">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:PublisherID" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/PublisherIDToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- ResourceID -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/PublisherMetadata/ResourceID=ResourceID:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/PublisherMetadata/ResourceIDToolTip=This identifies a specific 'instance' of a resource; e.g. one image in one 
-		file format at one resolution. This allows the same resource (image) to 
-		be offered in different formats and resolutions. Together with the 
-		PublisherID, each registered resource is uniquely identified in the 
-		database." x="0" y="84">
-				<fi:XMPTextInput xmpPath="avm:ResourceID" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/ResourceID=ResourceID:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/ResourceIDToolTip=This identifies a specific 'instance' of a resource; e.g. one image in one file format at one resolution. This allows the same resource (image) to be offered in different formats and resolutions. Together with the	PublisherID, each registered resource is uniquely identified in the database." x="0" y="84">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:ResourceID" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/ResourceIDToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- ResourceURL -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/PublisherMetadata/ResourceURL=ResourceURL:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/PublisherMetadata/ResourceURLToolTip=A unique URL pointing to the specific online image/image archive is 
-		needed to identify where to obtain the image. Each ResourceID is 
-		paired with a matching ResourceURL." y="28">
-				<fi:XMPTextInput xmpPath="avm:ResourceURL" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/ResourceURL=ResourceURL:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/ResourceURLToolTip=A unique URL pointing to the specific online image/image archive is needed to identify where to obtain the image. Each ResourceID is paired with a matching ResourceURL." y="28">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:ResourceURL" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/ResourceURLToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- RelatedResources -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/PublisherMetadata/RelatedResources=RelatedResources:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/PublisherMetadata/RelatedResourcesToolTip=The format is a list of PublisherID/ID values that will reference specific 
-		resources registered in VAMP (though not specific 'instances')." y="112">
-				<fi:XMPTextInput xmpPath="avm:RelatedResources" xmpArray="bag" xmpType="Text"/>
+					label="$$$/xmp/sdk/custompanels/AVM/RelatedResources=RelatedResources:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/RelatedResourcesToolTip=The format is a list of PublisherID/ID values that will reference specific resources registered in VAMP (though not specific 'instances')." y="112">
+				<mx:VBox width="100%">
+					<fi:XMPTextInput xmpPath="avm:RelatedResources" xmpArray="bag" xmpType="Text"/>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/RelatedResourcesToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- MetadataDate -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/PublisherMetadata/MetadataDate=MetadataDate:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/PublisherMetadata/MetadataDateToolTip=The date of the metadata content for the image." y="140">
-				<fi:XMPDateField xmpPath="avm:MetadataDate" id="metadataDate" />
+					label="$$$/xmp/sdk/custompanels/AVM/MetadataDate=MetadataDate:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/MetadataDateToolTip=The date of the metadata content for the image." y="140">
+				<mx:VBox width="100%">
+					<fi:XMPDateField xmpPath="avm:MetadataDate" id="metadataDate" />
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/MetadataDateToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
+			
+			<!-- MetadataVersion -->
 			<fi:XMPFormItem 
-					label="$$$/xmp/sdk/custompanels/PublisherMetadata/MetadataVersion=MetadataVersion:" 
-					labelTooltip="$$$/xmp/sdk/custompanels/PublisherMetadata/MetadataVersionToolTip=This is the version of the applied metadata definition." y="170">
+					label="$$$/xmp/sdk/custompanels/AVM/MetadataVersion=MetadataVersion:" 
+					labelTooltip="$$$/xmp/sdk/custompanels/AVM/MetadataVersionToolTip=This is the version of the applied metadata definition." y="170">
+				<mx:VBox width="100%">
 					<fi:XMPComboBox writeEmptyValues="false" xmpPath="avm:MetadataVersion">
 						<fi:dataProvider>
 							<mx:ArrayCollection id="metadataVersionChoices">
@@ -424,12 +752,15 @@ original creator." horizontalAlign="left" y="28">
 							</mx:ArrayCollection>
 						</fi:dataProvider>
 					</fi:XMPComboBox>
+					<mx:HBox>
+						<mx:Label fontSize="9" color="#303030" text="{ZStringManager.getString('$$$/xmp/sdk/custompanels/AVM/MetadataVersionToolTip')}" />
+					</mx:HBox>	
+				</mx:VBox>
 			</fi:XMPFormItem>
 			
-	<!-- 
-		FITS Liberator Metadata
-	-->			
-
+			<!-- 
+				FITS Liberator Metadata
+			-->			
 			<mx:HRule width="756" height="10"/>
 			<mx:Label text="FITS Liberator Metadata" fontWeight="bold"/>
 			
